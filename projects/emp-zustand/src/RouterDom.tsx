@@ -1,6 +1,15 @@
 import {lazy, Suspense} from 'react'
 import type {RouteObject} from 'react-router-dom'
-import {Outlet, NavLink, useRoutes, BrowserRouter, useParams, useResolvedPath, useLocation} from 'react-router-dom'
+import {
+  Outlet,
+  NavLink,
+  useRoutes,
+  BrowserRouter,
+  HashRouter,
+  useParams,
+  useResolvedPath,
+  useLocation,
+} from 'react-router-dom'
 // import {Controls, Code, App} from './component/App'
 //
 const App = lazy(() => import('./component/App'))
@@ -78,7 +87,7 @@ export const RouterConfig = () => {
   return element
 }
 export const RouterDom = () => (
-  <BrowserRouter>
+  <HashRouter>
     <RouterConfig />
-  </BrowserRouter>
+  </HashRouter>
 )
