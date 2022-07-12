@@ -25,6 +25,11 @@ export const Layout = (props: any) => {
               Code
             </NavLink>
           </li>
+          <li>
+            <a href="https://github.com/ckken/emp-zustand" target="_blank" rel="noreferrer">
+              Github
+            </a>
+          </li>
         </ul>
       </nav>
 
