@@ -1,0 +1,22 @@
+{
+  "name": "emp-zustand",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build": "pnpm run --filter=emp-zustand build"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ckken/emp-zustand.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ckken/emp-zustand/issues"
+  },
+  "homepage": "https://github.com/ckken/emp-zustand#readme",
+  "dependencies": {
+    "@efox/eslint-config-react": "^2.3.0"
+  }
+}
