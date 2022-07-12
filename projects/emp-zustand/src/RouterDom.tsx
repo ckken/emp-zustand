@@ -1,6 +1,11 @@
+import {lazy, Suspense} from 'react'
 import type {RouteObject} from 'react-router-dom'
 import {Outlet, NavLink, useRoutes, BrowserRouter, useParams, useResolvedPath, useLocation} from 'react-router-dom'
-import {Controls, Code, App} from './component/App'
+// import {Controls, Code, App} from './component/App'
+//
+const App = lazy(() => import('./component/App'))
+const List = lazy(() => import('./component/List'))
+//
 export const Layout = (props: any) => {
   // const params = useParams()
   // // const pathname = useResolvedPath()
@@ -15,14 +20,14 @@ export const Layout = (props: any) => {
               Home
             </NavLink>
           </li>
-          <li>
+          {/* <li>
             <NavLink to="/controls" className={({isActive}) => (isActive ? 'actived' : '')}>
               Controls
             </NavLink>
-          </li>
+          </li> */}
           <li>
-            <NavLink to="/code" className={({isActive}) => (isActive ? 'actived' : '')}>
-              Code
+            <NavLink to="/list" className={({isActive}) => (isActive ? 'actived' : '')}>
+              List
             </NavLink>
           </li>
           <li>
@@ -42,7 +47,9 @@ export const Layout = (props: any) => {
           <span>Zustand@4</span>
           <span>EMP@2</span>
         </p>
-        <Outlet />
+        <Suspense fallback="loading...">
+          <Outlet />
+        </Suspense>
       </div>
     </div>
   )
@@ -55,13 +62,13 @@ export const RouterConfig = () => {
       element: <Layout />,
       children: [
         {index: true, element: <App />},
+        // {
+        //   path: '/controls',
+        //   element: <Controls />,
+        // },
         {
-          path: '/controls',
-          element: <Controls />,
-        },
-        {
-          path: '/code',
-          element: <Code />,
+          path: '/list',
+          element: <List />,
         },
         {path: '*', element: <App />},
       ],

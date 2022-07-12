@@ -10,11 +10,10 @@ export const Controls = () => {
     <div className="controls">
       <h1>Controls</h1>
       <Refresh />
-      <p>{bears}</p>
+      <h1>{bears}</h1>
       <p>
-        <button onClick={increasePopulation}>increasePopulation</button>-
-        <button onClick={decreasePopulation}>decreasePopulation</button>-
-        <button onClick={removeAllBears}>removeAllBears</button>
+        <button onClick={increasePopulation}>Inc</button>-<button onClick={decreasePopulation}>Dec</button>-
+        <button onClick={removeAllBears}>Clean</button>
       </p>
     </div>
   )
@@ -29,7 +28,7 @@ export const Code = () => {
       <Refresh />
       <pre>{code}</pre>
       <p>
-        <button onClick={fetchRemote}>Fetch Remote</button>-<button onClick={cleanCode}>Clean Code</button>
+        <button onClick={fetchRemote}>Fetch</button>-<button onClick={cleanCode}>Clean</button>
       </p>
     </div>
   )
