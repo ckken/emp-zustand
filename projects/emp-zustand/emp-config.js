@@ -1,9 +1,10 @@
 const {defineConfig} = require('@efox/emp')
+const path = require('path')
 module.exports = defineConfig(() => {
   return {
     moduleTransform: {
-      // include: ['zustand'],
-      include: [/node_modules/],
+      include: [require.resolve('zustand')],
+      // include: [/zustand/],
     },
     html: {
       title: 'EMP Zustand',
