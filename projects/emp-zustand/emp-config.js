@@ -2,7 +2,7 @@ const {defineConfig} = require('@efox/emp')
 module.exports = defineConfig(() => {
   return {
     moduleTransform: {
-      include: [/zustand/, /react-router-dom/],
+      include: ['zustand'],
     },
     html: {
       title: 'EMP Zustand',
