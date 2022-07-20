@@ -1,8 +1,8 @@
 const {defineConfig} = require('@efox/emp')
 module.exports = defineConfig(() => {
   return {
-    moduleTransform: {
-      include: [/zustand/],
+    server: {
+      https: true,
     },
     html: {
       title: 'EMP Zustand',
