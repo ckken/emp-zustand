@@ -1,6 +1,6 @@
 import {lazy, Suspense, useEffect} from 'react'
 import type {RouteObject} from 'react-router-dom'
-import useCommonStore from './store/CommonStore'
+import useCommonStore, {getCommonStore} from './store/CommonStore'
 import {
   Outlet,
   NavLink,
@@ -17,16 +17,18 @@ const App = lazy(() => import('./component/App'))
 const List = lazy(() => import('./component/List'))
 //
 export const Layout = (props: any) => {
-  const reactVersion = useCommonStore(state => state.reactVersion)
-  const reactDomVersion = useCommonStore(state => state.reactDomVersion)
-  const chromeVersion = useCommonStore(state => state.chromeVersion)
-  const initCommon = useCommonStore(state => state.init)
+  // const reactVersion = useCommonStore(state => state.reactVersion)
+  // const reactDomVersion = useCommonStore(state => state.reactDomVersion)
+  // const chromeVersion = useCommonStore(state => state.chromeVersion)
+  // const initCommon = useCommonStore(state => state.init)
+  const commonStore = getCommonStore()
+  const {reactDomVersion, reactVersion, chromeVersion} = commonStore
   // const params = useParams()
   // // const pathname = useResolvedPath()
   // const location = useLocation()
   // console.log(params, location)
   useEffect(() => {
-    initCommon()
+    commonStore.init()
   }, [])
   return (
     <div className="layout">
