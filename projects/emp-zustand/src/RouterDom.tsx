@@ -1,5 +1,6 @@
-import {lazy, Suspense} from 'react'
+import {lazy, Suspense, useEffect} from 'react'
 import type {RouteObject} from 'react-router-dom'
+import useCommonStore from './store/CommonStore'
 import {
   Outlet,
   NavLink,
@@ -16,10 +17,17 @@ const App = lazy(() => import('./component/App'))
 const List = lazy(() => import('./component/List'))
 //
 export const Layout = (props: any) => {
+  const reactVersion = useCommonStore(state => state.reactVersion)
+  const reactDomVersion = useCommonStore(state => state.reactDomVersion)
+  const chromeVersion = useCommonStore(state => state.chromeVersion)
+  const initCommon = useCommonStore(state => state.init)
   // const params = useParams()
   // // const pathname = useResolvedPath()
   // const location = useLocation()
   // console.log(params, location)
+  useEffect(() => {
+    initCommon()
+  }, [])
   return (
     <div className="layout">
       <nav className="nav">
@@ -50,11 +58,12 @@ export const Layout = (props: any) => {
       <div className="content">
         <h1>EMP Zustand Demo</h1>
         <p className="tags">
-          <span>React@17</span>
-          <span>ReactDom@17</span>
+          <span>React@{reactVersion}</span>
+          <span>ReactDom@{reactDomVersion}</span>
           <span>ReactRouter@16</span>
           <span>Zustand@4</span>
           <span>EMP@2</span>
+          {chromeVersion ? <span>Chrome@{chromeVersion}</span> : null}
         </p>
         <Suspense fallback="loading...">
           <Outlet />

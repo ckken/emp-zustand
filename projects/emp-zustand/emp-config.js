@@ -11,5 +11,8 @@ module.exports = defineConfig(() => {
     html: {
       title: 'EMP Zustand',
     },
+    // debug: {
+    //   babelDebug: true,
+    // },
   }
 })

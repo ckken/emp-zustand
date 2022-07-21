@@ -1,12 +1,5 @@
-import {StrictMode} from 'react'
-import {render} from 'react-dom'
+import {createRoot} from 'react-dom/client'
 import {RouterDom} from 'src/RouterDom'
-
-render(
-  <>
-    <StrictMode>
-      <RouterDom />
-    </StrictMode>
-  </>,
-  document.getElementById('emp-root'),
-)
+const container = document.getElementById('emp-root') as HTMLElement
+const root = createRoot(container)
+root.render(<RouterDom />)
