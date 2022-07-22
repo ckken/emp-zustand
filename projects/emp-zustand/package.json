@@ -27,6 +27,7 @@
     "@efox/emp": "^2.4.0",
     "@types/react": "18",
     "@types/react-dom": "18",
+    "simple-zustand-devtools": "^1.1.0",
     "typescript": "^4.7.4"
   }
 }
