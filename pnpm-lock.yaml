@@ -18,7 +18,9 @@ importers:
       react: ^18.2.0
       react-dom: ^18.2.0
       react-router-dom: ^6.3.0
+      react-virtuoso: ^2.16.5
       typescript: ^4.7.4
+      yyeva: ^1.0.0-beta.15
       zustand: ^4.0.0-rc.4
     dependencies:
       axios: 0.27.2
@@ -26,6 +28,8 @@ importers:
       react: 18.2.0
       react-dom: 18.2.0_react@18.2.0
       react-router-dom: 6.3.0_react-dom@18.2.0+react@18.2.0
+      react-virtuoso: 2.16.5_react-dom@18.2.0+react@18.2.0
+      yyeva: 1.0.0-beta.15
       zustand: 4.0.0-rc.4_react@18.2.0
     devDependencies:
       '@efox/emp': 2.4.0_bd9c83094810ab90083dba3e00a5ec1d
@@ -2204,6 +2208,20 @@ packages:
     dependencies:
       '@typescript-eslint/types': 5.30.7
       eslint-visitor-keys: 3.3.0
+    dev: false
+
+  /@virtuoso.dev/react-urx/0.2.13_react@18.2.0:
+    resolution: {integrity: sha512-MY0ugBDjFb5Xt8v2HY7MKcRGqw/3gTpMlLXId2EwQvYJoC8sP7nnXjAxcBtTB50KTZhO0SbzsFimaZ7pSdApwA==}
+    engines: {node: '>=10'}
+    peerDependencies:
+      react: '>=16'
+    dependencies:
+      '@virtuoso.dev/urx': 0.2.13
+      react: 18.2.0
+    dev: false
+
+  /@virtuoso.dev/urx/0.2.13:
+    resolution: {integrity: sha512-iirJNv92A1ZWxoOHHDYW/1KPoi83939o83iUBQHIim0i3tMeSKEh+bxhJdTHQ86Mr4uXx9xGUTq69cp52ZP8Xw==}
     dev: false
 
   /@webassemblyjs/ast/1.11.1:
@@ -6289,6 +6307,19 @@ packages:
       react: 18.2.0
     dev: false
 
+  /react-virtuoso/2.16.5_react-dom@18.2.0+react@18.2.0:
+    resolution: {integrity: sha512-bedbW1eJX/s0/XdDVxYZG1kLwXbLkpASskRQ4+UuvZ3mU0LWqDtjPsEzylXbOGhRaWeiuiG768BGl4zxQUBczg==}
+    engines: {node: '>=10'}
+    peerDependencies:
+      react: '>=16 || >=17 || >= 18'
+      react-dom: '>=16 || >=17 || >= 18'
+    dependencies:
+      '@virtuoso.dev/react-urx': 0.2.13_react@18.2.0
+      '@virtuoso.dev/urx': 0.2.13
+      react: 18.2.0
+      react-dom: 18.2.0_react@18.2.0
+    dev: false
+
   /react/18.2.0:
     resolution: {integrity: sha512-/3IjMdb2L9QbBdWiW5e3P2/npwMBaU9mHCSCUzNln0ZCYbcfTsGbTJrU/kGemdH2IWmB2ioZ+zkxtmq6g09fGQ==}
     engines: {node: '>=0.10.0'}
@@ -7539,6 +7570,17 @@ packages:
     resolution: {integrity: sha512-rVksvsnNCdJ/ohGc6xgPwyN8eheCxsiLM8mxuE/t/mOVqJewPuO1miLpTHQiRgTKCLexL4MeAFVagts7HmNZ2Q==}
     engines: {node: '>=10'}
     dev: true
+
+  /yyeva/1.0.0-beta.15:
+    resolution: {integrity: sha512-nvyZpo8isf8E2NtdvdNCxXtr8zSTqqPJNWiJghDltexZc30RAuHwk8Ieyif77lidT95Y8xTLYpwaShCe2Q5QdA==}
+    engines: {node: '>=14'}
+    dependencies:
+      zlib.es: 0.6.0
+    dev: false
+
+  /zlib.es/0.6.0:
+    resolution: {integrity: sha512-xLRH3sy3TUS/rjCdUyFoxcLnTwI4296drZzBs5ojWziWnq1VXp+heIIjPHUiMDfBjg5zKfpio1xTZxADfrkknQ==}
+    dev: false
 
   /zustand/4.0.0-rc.4_react@18.2.0:
     resolution: {integrity: sha512-BP35Rq40GBTKKtYyjLuZogzXGh289xqO8U8ivGIK43nRqURD2dEEImkUci1/jWRUz7J1OPJkUZuNySCho801gQ==}

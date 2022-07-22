@@ -1,28 +1,39 @@
 import {Controls, Refresh} from './App'
 import useListStore from 'src/store/ListStore'
 import {useEffect} from 'react'
-const Scroll = () => {
+import {Virtuoso} from 'react-virtuoso'
+const ListItem = ({item}: any) => {
+  return <li>{item}</li>
+}
+const Control = () => {
   const {list, getList, listNum, changeListNum} = useListStore(state => state)
   useEffect(() => {
-    getList()
+    list.length === 0 && getList()
   }, [])
   return (
+    <div className="control">
+      Count <b>{list.length}</b>
+      <input
+        value={listNum}
+        onChange={e => {
+          console.log(e)
+          changeListNum(e.target.value)
+        }}
+      />
+      <button onClick={getList}>fetch</button>
+    </div>
+  )
+}
+const Scroll = () => {
+  const {list} = useListStore(state => state)
+  return (
     <div className="scroll">
-      <div className="control">
-        Count <b>{list.length}</b>
-        <button onClick={getList}>fetch</button>
-        <input
-          value={listNum}
-          onChange={e => {
-            console.log(e)
-            changeListNum(e.target.value)
-          }}
-        />
-      </div>
       <ul>
-        {list.map(d => {
-          return <li key={d}>{d}</li>
-        })}
+        <Virtuoso
+          style={{height: '400px'}}
+          totalCount={list.length}
+          itemContent={index => <ListItem item={list[index]} />}
+        />
       </ul>
     </div>
   )
@@ -30,9 +41,10 @@ const Scroll = () => {
 const List = () => {
   return (
     <div className="list">
-      <h1>
+      <h1 className="title">
         List
         <Refresh />
+        <Control />
       </h1>
       <Scroll />
     </div>

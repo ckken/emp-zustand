@@ -3,20 +3,23 @@
 .layout {
 	.logo {
 		font-weight: bold;
+		margin-right: 10px;
 	}
 
 	.nav {
 		background: #eee;
 		padding: 10px;
+
 		.wrap {
 			display: flex;
-			justify-content: space-between;
+			// justify-content: space-between;
 			align-items: center;
 		}
 
 		ul {
 			display: flex;
 			list-style: none;
+
 			li {
 				a {
 					text-decoration: none;
@@ -34,49 +37,105 @@
 
 	.tags {
 		margin-top: 8px;
+
 		span {
 			background-color: #ddd;
 			color: #222;
 			display: inline-block;
 			font-size: 3px;
 			margin: 1px 2px;
-			padding:1px;
+			padding: 1px;
 		}
 	}
 
 	.content {
 		padding: 20px;
 	}
-	.refresh{
+
+	.refresh {
 		font-size: 5px;
 		font-weight: normal;
 		margin-left: 3px;
 		vertical-align: top;
 	}
+
 	// .code{
 	// 	overflow-y: scroll;
 	// }
-	h1{
+	h1 {
 		font-size: 18px;
 	}
-	.list{
-		.scroll{
-			ul{
 
-				li{
+	.list {
+		.title {
+			display: flex;
+		}
+
+		.scroll {
+			ul {
+
+				li {
 					padding: 5px 0;
 					border-bottom: 1px solid #eee;
 				}
 			}
 		}
-		.control{
-			padding: 10px 0;
-			b{
-				font-size: 20px; margin-right: 10px;
+
+		.control {
+			font-size: 12px;
+
+			input {
+				width: 80px;
+			}
+
+			b {
+				font-size: 20px;
+				margin-right: 10px;
 			}
 		}
 	}
+
+	.github {
+		position: fixed;
+		bottom: 0;
+		right: 0;
+
+		a {
+			text-decoration: none;
+			font-size: 12px;
+			background-color: #222;
+			color: #eee;
+			padding: 3px;
+			display: inline-block;
+		}
+	}
+
+	.yyeva {
+		.title {
+			margin: 0;
+			margin-bottom: 10px;
+			padding: 0;
+			color: #222;
+			a {
+				text-decoration: none;
+				background-color: #222;
+				color: #eee;
+				padding: 3px 5px;
+				font-size: 12px;
+				display: inline-block;
+				margin-left: 5px;
+			}
+		}
+
+		.container {
+			background: #222;
+			height: 550px;
+			max-width: 375px;
+		}
+
+	}
 }
-html{
+
+html {
 	font-size: 14px;
 }
