@@ -1,6 +1,6 @@
 import {lazy, Suspense, useEffect} from 'react'
 import type {RouteObject} from 'react-router-dom'
-import useCommonStore, {getCommonStore} from './store/CommonStore'
+import useCommonStore from './store/CommonStore'
 import {
   Outlet,
   NavLink,
@@ -11,6 +11,7 @@ import {
   useResolvedPath,
   useLocation,
 } from 'react-router-dom'
+import {Refresh} from './component/App'
 // import {Controls, Code, App} from './component/App'
 //
 const App = lazy(() => import('./component/App'))
@@ -21,7 +22,7 @@ export const Layout = (props: any) => {
   // const reactDomVersion = useCommonStore(state => state.reactDomVersion)
   // const chromeVersion = useCommonStore(state => state.chromeVersion)
   // const initCommon = useCommonStore(state => state.init)
-  const commonStore = getCommonStore()
+  const commonStore = useCommonStore(state => state)
   const {reactDomVersion, reactVersion, chromeVersion} = commonStore
   // const params = useParams()
   // // const pathname = useResolvedPath()
@@ -33,32 +34,34 @@ export const Layout = (props: any) => {
   return (
     <div className="layout">
       <nav className="nav">
-        <ul>
-          <li>
-            <NavLink to="/" className={({isActive}) => (isActive ? 'actived' : '')}>
-              Home
-            </NavLink>
-          </li>
-          {/* <li>
+        <div className="wrap">
+          <div className="logo">
+            EMP Zustand
+            <Refresh />
+          </div>
+          <ul>
+            <li>
+              <NavLink to="/" className={({isActive}) => (isActive ? 'actived' : '')}>
+                Home
+              </NavLink>
+            </li>
+            {/* <li>
             <NavLink to="/controls" className={({isActive}) => (isActive ? 'actived' : '')}>
               Controls
             </NavLink>
           </li> */}
-          <li>
-            <NavLink to="/list" className={({isActive}) => (isActive ? 'actived' : '')}>
-              List
-            </NavLink>
-          </li>
-          <li>
-            <a href="https://github.com/ckken/emp-zustand" target="_blank" rel="noreferrer">
-              Github
-            </a>
-          </li>
-        </ul>
-      </nav>
-
-      <div className="content">
-        <h1>EMP Zustand Demo</h1>
+            <li>
+              <NavLink to="/list" className={({isActive}) => (isActive ? 'actived' : '')}>
+                List
+              </NavLink>
+            </li>
+            <li>
+              <a href="https://github.com/ckken/emp-zustand" target="_blank" rel="noreferrer">
+                Github
+              </a>
+            </li>
+          </ul>
+        </div>
         <p className="tags">
           <span>React@{reactVersion}</span>
           <span>ReactDom@{reactDomVersion}</span>
@@ -67,6 +70,9 @@ export const Layout = (props: any) => {
           <span>EMP@2</span>
           {chromeVersion ? <span>Chrome@{chromeVersion}</span> : null}
         </p>
+      </nav>
+
+      <div className="content">
         <Suspense fallback="loading...">
           <Outlet />
         </Suspense>

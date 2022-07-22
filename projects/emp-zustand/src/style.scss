@@ -1,39 +1,82 @@
-body{
-    margin: 0;
-    padding: 0;
-}
-.layout {
-    .nav {
-        background: #eee;
-        padding: 10px 0;
-        ul {
-            display: flex;
-            list-style: none;
-            li {
-                padding: 0 5px;
-                a{
-                    text-decoration: none;
-                    color: #222;
-										padding: 3px 8px;
-                }
-								a.actived{
-									background: #222;
-									color: #fff;
-								}
-            }
-        }
-    }
+@import './normalize.css';
 
-    .tags {
-        span {
-            background-color: #222;
-            color: #fff;
-            display: inline-block;
-            margin: 2px;
-            padding: 2px 5px;
-        }
-    }
-    .content{
-        padding: 20px;
-    }
+.layout {
+	.logo {
+		font-weight: bold;
+	}
+
+	.nav {
+		background: #eee;
+		padding: 10px;
+		.wrap {
+			display: flex;
+			justify-content: space-between;
+			align-items: center;
+		}
+
+		ul {
+			display: flex;
+			list-style: none;
+			li {
+				a {
+					text-decoration: none;
+					color: #222;
+					padding: 1px 3px;
+				}
+
+				a.actived {
+					background: #222;
+					color: #fff;
+				}
+			}
+		}
+	}
+
+	.tags {
+		margin-top: 8px;
+		span {
+			background-color: #ddd;
+			color: #222;
+			display: inline-block;
+			font-size: 3px;
+			margin: 1px 2px;
+			padding:1px;
+		}
+	}
+
+	.content {
+		padding: 20px;
+	}
+	.refresh{
+		font-size: 5px;
+		font-weight: normal;
+		margin-left: 3px;
+		vertical-align: top;
+	}
+	// .code{
+	// 	overflow-y: scroll;
+	// }
+	h1{
+		font-size: 18px;
+	}
+	.list{
+		.scroll{
+			ul{
+
+				li{
+					padding: 5px 0;
+					border-bottom: 1px solid #eee;
+				}
+			}
+		}
+		.control{
+			padding: 10px 0;
+			b{
+				font-size: 20px; margin-right: 10px;
+			}
+		}
+	}
+}
+html{
+	font-size: 14px;
 }

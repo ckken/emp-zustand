@@ -2,20 +2,18 @@ import create from 'zustand'
 import axios from 'axios'
 import {devtools} from 'zustand/middleware'
 interface CodeStoreType {
-  code: string
+  code: any
   fetchRemote: () => void
   cleanCode: () => void
 }
 const useCodeStore = create<CodeStoreType>()(
   devtools(set => ({
-    code: '',
+    code: {},
     cleanCode() {
       set({code: ''})
     },
     async fetchRemote() {
-      const {data} = await axios.get(
-        'https://unpkg.bdgamelive.com/webupload/gfe/mobx-react-lite@3.2.2/umd/mobxreactlite.umd.production.min.js',
-      )
+      const {data} = await axios.get('/data.json')
       set({code: data})
     },
   })),

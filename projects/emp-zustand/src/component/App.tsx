@@ -1,6 +1,6 @@
 import useActionStore from 'src/store/ActionStore'
 import useCodeStore from 'src/store/CodeStore'
-export const Refresh = () => <p>Refresh {Math.random()}</p>
+export const Refresh = () => <span className="refresh">{Math.round(Math.random() * 1000)}</span>
 export const Controls = () => {
   const bears = useActionStore(state => state.bears)
   const increasePopulation = useActionStore(state => state.increasePopulation)
@@ -8,8 +8,11 @@ export const Controls = () => {
   const removeAllBears = useActionStore(state => state.removeAllBears)
   return (
     <div className="controls">
-      <h1>Controls</h1>
-      <Refresh />
+      <h1>
+        Controls
+        <Refresh />
+      </h1>
+
       <h1>{bears}</h1>
       <p>
         <button onClick={increasePopulation}>Inc</button>-<button onClick={decreasePopulation}>Dec</button>-
@@ -24,20 +27,25 @@ export const Code = () => {
   const cleanCode = useCodeStore(state => state.cleanCode)
   return (
     <div className="code">
-      <h1>Code</h1>
-      <Refresh />
-      <pre>{code}</pre>
+      <h1>
+        Code
+        <Refresh />
+      </h1>
       <p>
         <button onClick={fetchRemote}>Fetch</button>-<button onClick={cleanCode}>Clean</button>
       </p>
+      <pre className="code">{Object.keys(code).length > 0 ? JSON.stringify(code, null, 2) : null}</pre>
     </div>
   )
 }
 export const App = () => {
   return (
     <>
-      <h1>Home</h1>
-      <Refresh />
+      <h1>
+        Home
+        <Refresh />
+      </h1>
+
       <Controls />
       <Code />
     </>
