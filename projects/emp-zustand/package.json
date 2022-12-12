@@ -20,11 +20,12 @@
     "react-dom": "^18.2.0",
     "react-router-dom": "^6.3.0",
     "react-virtuoso": "^2.16.5",
-    "yyeva": "^1.0.0-beta.15",
+    "yyeva": "1.0.0-rc.2",
     "zustand": "^4.0.0"
   },
   "devDependencies": {
-    "@efox/emp": "^2.4.0",
+		"@efox/emp-compile-swc": "^1.2.1",
+    "@efox/emp": "^2.5.11",
     "@types/react": "18",
     "@types/react-dom": "18",
     "simple-zustand-devtools": "^1.1.0",
