@@ -35,7 +35,7 @@ export const Layout = (props: any) => {
     <div className="layout">
       <div className="github">
         <a href="https://github.com/ckken/emp-zustand" target="_blank" rel="noreferrer">
-          Github
+          Github EMP 2.5 SWC
         </a>
       </div>
       <nav className="nav">

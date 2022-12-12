@@ -16,7 +16,7 @@ const Control = () => {
       <input
         value={listNum}
         onChange={e => {
-          console.log(e)
+          console.log('changeListNum',e.target.value)
           changeListNum(e.target.value)
         }}
       />

@@ -1,4 +1,6 @@
 import create from 'zustand'
+// bug https://github.com/swc-project/swc/issues/6627
+// console.log(`[...new Array(100).keys()]`,[...new Array(100).keys()])
 interface ListInterface {
   list: number[]
   getList: () => void
@@ -12,7 +14,8 @@ const useListStore = create<ListInterface>()((set, get) => ({
     set({listNum: parseInt(num)})
   },
   getList() {
-    let l: number[] = [...new Array(get().listNum).keys()]
+    // let l: number[] = [...new Array(get().listNum).keys()]
+		let l: number[] = [...new Array(get().listNum).fill('')]
     l = l.map(() => {
       return Math.random()
     })
