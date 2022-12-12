@@ -21,7 +21,7 @@
     "react-router-dom": "^6.3.0",
     "react-virtuoso": "^2.16.5",
     "yyeva": "^1.0.0-beta.15",
-    "zustand": "^4.0.0-rc.4"
+    "zustand": "^4.0.0"
   },
   "devDependencies": {
     "@efox/emp": "^2.4.0",
