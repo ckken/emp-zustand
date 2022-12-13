@@ -2,6 +2,7 @@ import create from 'zustand'
 
 /**
  * swc bug
+   https://github.com/swc-project/swc/issues/6627
    console.log(`[...new Array(100).keys()]`,[...new Array(100).keys()])
 */
 interface ListInterface {
