@@ -24,7 +24,7 @@
     "zustand": "^4.0.0"
   },
   "devDependencies": {
-		"@efox/emp-compile-swc": "^1.2.1",
+		"@efox/emp-compile-swc": "^1.2.2",
     "@efox/emp": "^2.5.11",
     "@types/react": "18",
     "@types/react-dom": "18",
