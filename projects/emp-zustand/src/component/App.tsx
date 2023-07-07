@@ -1,5 +1,6 @@
 import useActionStore from 'src/store/ActionStore'
 import useCodeStore from 'src/store/CodeStore'
+import useKeyDown from 'src/hook/useKeyDown'
 export const Refresh = () => <span className="refresh">{Math.round(Math.random() * 1000)}</span>
 export const Controls = () => {
   const bears = useActionStore(state => state.bears)
@@ -39,13 +40,16 @@ export const Code = () => {
   )
 }
 export const App = () => {
+  const {key, keyDisable, changeDisable} = useKeyDown()
   return (
     <>
       <h1>
-        Home
+        Home - List: key: {key.toString()}
         <Refresh />
       </h1>
-
+      <button style={{color: '#eee', backgroundColor: keyDisable ? 'red' : 'green', border: 0}} onClick={changeDisable}>
+        keydown
+      </button>
       <Controls />
       <Code />
     </>

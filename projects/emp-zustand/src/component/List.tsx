@@ -16,7 +16,7 @@ const Control = () => {
       <input
         value={listNum}
         onChange={e => {
-          console.log('changeListNum',e.target.value)
+          console.log('changeListNum', e.target.value)
           changeListNum(e.target.value)
         }}
       />
@@ -42,7 +42,6 @@ const List = () => {
   return (
     <div className="list">
       <h1 className="title">
-        List
         <Refresh />
         <Control />
       </h1>
