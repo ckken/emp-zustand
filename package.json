@@ -15,8 +15,5 @@
   "bugs": {
     "url": "https://github.com/ckken/emp-zustand/issues"
   },
-  "homepage": "https://github.com/ckken/emp-zustand#readme",
-  "dependencies": {
-    "@efox/eslint-config-react": "^2.3.0"
-  }
+  "homepage": "https://github.com/ckken/emp-zustand#readme"
 }
