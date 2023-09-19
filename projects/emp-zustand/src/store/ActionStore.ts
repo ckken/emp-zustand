@@ -1,15 +1,31 @@
 import create from 'zustand'
-interface ActionStoreType {
-  bears: number
-  increasePopulation: () => void
+import { immer } from 'zustand/middleware/immer'
+interface BearsI {
+	count:number,
+	tips:string
+}
+interface TypeI {
+  bears: BearsI
+}
+interface ActionI {
+	increasePopulation: () => void
   decreasePopulation: () => void
   removeAllBears: () => void
 }
-const useActionStore = create<ActionStoreType>()(set => ({
-  bears: 0,
-  increasePopulation: () => set(state => ({bears: state.bears + 1})),
-  decreasePopulation: () => set(state => ({bears: state.bears - 1})),
-  removeAllBears: () => set({bears: 0}),
-}))
+const useActionStore = create(immer<TypeI&ActionI>(set => ({
+  bears: {
+		count:0,
+		tips:'bearStore'
+	},
+  increasePopulation: () => set(state => {
+		state.bears.count++
+	}),
+  decreasePopulation: () => set(state => {
+		state.bears.count --
+	}),
+  removeAllBears: () => set(state=>{
+		state.bears.count = 0
+	}),
+})))
 
 export default useActionStore

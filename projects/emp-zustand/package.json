@@ -16,16 +16,17 @@
   "dependencies": {
     "axios": "^0.27.2",
     "core-js": "^3.23.5",
+    "immer": "^10.0.2",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-router-dom": "^6.3.0",
     "react-virtuoso": "^2.16.5",
-    "yyeva": "1.0.0-rc.2",
-    "zustand": "^4.0.0"
+    "yyeva": "1.0.0-rc.23",
+    "zustand": "^4.4.1"
   },
   "devDependencies": {
-		"@efox/emp-compile-swc": "^1.2.2",
-    "@efox/emp": "^2.6.0",
+    "@efox/emp": "^2.7.1",
+    "@efox/emp-compile-swc": "^1.3.3",
     "@types/react": "18",
     "@types/react-dom": "18",
     "simple-zustand-devtools": "^1.1.0",

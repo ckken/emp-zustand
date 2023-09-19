@@ -2,11 +2,33 @@ import useActionStore from 'src/store/ActionStore'
 import useCodeStore from 'src/store/CodeStore'
 import useKeyDown from 'src/hook/useKeyDown'
 export const Refresh = () => <span className="refresh">{Math.round(Math.random() * 1000)}</span>
-export const Controls = () => {
-  const bears = useActionStore(state => state.bears)
+export const ShowCount=()=>{
+	const bears = useActionStore(state => state.bears)
+	return <h1>{bears.tips}Count: {bears.count} <Refresh /></h1>
+}
+export const ControlsBox = ()=>{
   const increasePopulation = useActionStore(state => state.increasePopulation)
   const decreasePopulation = useActionStore(state => state.decreasePopulation)
   const removeAllBears = useActionStore(state => state.removeAllBears)
+	const tips = useActionStore(state => state.bears.tips)
+	// const {increasePopulation,decreasePopulation,removeAllBears} = useActionStore(state => state)
+	return (
+		<>
+		 <h2>Control Count</h2>
+		<h1>{tips}Tips <Refresh /></h1>
+		<ShowCount/>
+		<p>
+			<button onClick={increasePopulation}>Inc</button>-<button onClick={decreasePopulation}>Dec</button>-
+			<button onClick={removeAllBears}>Clean</button>
+		</p>
+		</>
+	)
+}
+export const Controls = () => {
+  // const {bears,increasePopulation,decreasePopulation,removeAllBears} = useActionStore(state => state)
+  // const increasePopulation = useActionStore(state => state.increasePopulation)
+  // const decreasePopulation = useActionStore(state => state.decreasePopulation)
+  // const removeAllBears = useActionStore(state => state.removeAllBears)
   return (
     <div className="controls">
       <h1>
@@ -14,18 +36,14 @@ export const Controls = () => {
         <Refresh />
       </h1>
 
-      <h1>{bears}</h1>
-      <p>
-        <button onClick={increasePopulation}>Inc</button>-<button onClick={decreasePopulation}>Dec</button>-
-        <button onClick={removeAllBears}>Clean</button>
-      </p>
+		<ControlsBox/>
     </div>
   )
 }
 export const Code = () => {
-  const code = useCodeStore(state => state.code)
-  const fetchRemote = useCodeStore(state => state.fetchRemote)
-  const cleanCode = useCodeStore(state => state.cleanCode)
+  const {code,fetchRemote,cleanCode} = useCodeStore(state => state)
+  // const fetchRemote = useCodeStore(state => state.fetchRemote)
+  // const cleanCode = useCodeStore(state => state.cleanCode)
   return (
     <div className="code">
       <h1>
