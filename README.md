@@ -4,6 +4,7 @@
 + react-dom
 + react-router-dom
 + zustand
++ bun
 
 ## 引用观点
 ![](docs/1.png)

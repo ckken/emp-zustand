@@ -3,9 +3,6 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
-  "scripts": {
-    "build": "pnpm run --filter=emp-zustand build"
-  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/ckken/emp-zustand.git"
@@ -15,5 +12,38 @@
   "bugs": {
     "url": "https://github.com/ckken/emp-zustand/issues"
   },
-  "homepage": "https://github.com/ckken/emp-zustand#readme"
+  "homepage": "https://github.com/ckken/emp-zustand#readme",
+	"type": "module",
+  "workspaces": [
+    "packages/*",
+    "projects/*"
+  ],
+  "scripts": {
+    "prepare": "husky install"
+  },
+	"devDependencies": {
+    "@buncn/eslint-config-react": "^1.0.0",
+    "@buncn/tsconfig": "*",
+    "@commitlint/cli": "^17.7.1",
+    "@commitlint/config-conventional": "^17.7.0",
+    "husky": "^8.0.3"
+  },
+  "dependencies": {
+    "typescript": "^5.0.0"
+  },
+  "engines": {},
+  "commitlint": {
+    "extends": [
+      "@commitlint/config-conventional"
+    ]
+  },
+  "husky": {
+    "hooks": {
+      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
+    }
+  },
+  "eslintConfig": {
+    "root": true,
+    "extends": ["@buncn/eslint-config-react"]
+  }
 }
