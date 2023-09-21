@@ -2,27 +2,33 @@ import useActionStore from 'src/store/ActionStore'
 import useCodeStore from 'src/store/CodeStore'
 import useKeyDown from 'src/hook/useKeyDown'
 export const Refresh = () => <span className="refresh">{Math.round(Math.random() * 1000)}</span>
-export const ShowCount=()=>{
-	const bears = useActionStore(state => state.bears)
-	return <h1>{bears.tips}Count: {bears.count} <Refresh /></h1>
+export const ShowCount = () => {
+  const bears = useActionStore(state => state.bears)
+  return (
+    <h1>
+      {bears.tips}Count: {bears.count} <Refresh />
+    </h1>
+  )
 }
-export const ControlsBox = ()=>{
+export const ControlsBox = () => {
   const increasePopulation = useActionStore(state => state.increasePopulation)
   const decreasePopulation = useActionStore(state => state.decreasePopulation)
   const removeAllBears = useActionStore(state => state.removeAllBears)
-	const tips = useActionStore(state => state.bears.tips)
-	// const {increasePopulation,decreasePopulation,removeAllBears} = useActionStore(state => state)
-	return (
-		<>
-		 <h2>Control Count</h2>
-		<h1>{tips}Tips <Refresh /></h1>
-		<ShowCount/>
-		<p>
-			<button onClick={increasePopulation}>Inc</button>-<button onClick={decreasePopulation}>Dec</button>-
-			<button onClick={removeAllBears}>Clean</button>
-		</p>
-		</>
-	)
+  const tips = useActionStore(state => state.bears.tips)
+  // const {increasePopulation,decreasePopulation,removeAllBears} = useActionStore(state => state)
+  return (
+    <>
+      <h2>Control Count</h2>
+      <h1>
+        {tips}Tips <Refresh />
+      </h1>
+      <ShowCount />
+      <p>
+        <button onClick={increasePopulation}>Inc</button>-<button onClick={decreasePopulation}>Dec</button>-
+        <button onClick={removeAllBears}>Clean</button>
+      </p>
+    </>
+  )
 }
 export const Controls = () => {
   // const {bears,increasePopulation,decreasePopulation,removeAllBears} = useActionStore(state => state)
@@ -36,12 +42,12 @@ export const Controls = () => {
         <Refresh />
       </h1>
 
-		<ControlsBox/>
+      <ControlsBox />
     </div>
   )
 }
 export const Code = () => {
-  const {code,fetchRemote,cleanCode} = useCodeStore(state => state)
+  const {code, fetchRemote, cleanCode} = useCodeStore(state => state)
   // const fetchRemote = useCodeStore(state => state.fetchRemote)
   // const cleanCode = useCodeStore(state => state.cleanCode)
   return (

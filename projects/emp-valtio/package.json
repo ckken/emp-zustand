@@ -1,0 +1,28 @@
+{
+  "name": "emp-valtio",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "emp dev",
+    "build": "emp build",
+    "start": "emp serve",
+    "stat": "emp build --analyze",
+    "emp": "emp",
+    "lint": "eslint ./src --ext js,ts,tsx"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "valtio": "*"
+  },
+  "devDependencies": {
+    "@efox/emp": "^2.7.1",
+    "@efox/emp-compile-swc": "^1.3.3",
+    "@types/react": "18",
+    "@types/react-dom": "18",
+    "typescript": "^4.7.4"
+  }
+}
