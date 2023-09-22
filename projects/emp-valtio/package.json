@@ -16,7 +16,7 @@
   "dependencies": {
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "valtio": "*"
+    "valtio": "^1.11.2"
   },
   "devDependencies": {
     "@efox/emp": "^2.7.1",

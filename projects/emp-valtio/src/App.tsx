@@ -1,33 +1,8 @@
 import {Refresh} from './Refresh'
 import './style.css'
-const waitAsync = (time = 1000) => {
-  return new Promise((resolve, reject) => {
-    setTimeout(resolve, time)
-  })
-}
-//
-import {proxy, useSnapshot} from 'valtio'
-const state = proxy({
-  dur: 4,
-  config: {
-    count: 1,
-    info: 'count',
-  },
-  incDur() {
-    ++state.dur
-  },
-  decDur() {
-    --state.dur
-  },
-  async setCountAsync() {
-    await waitAsync(500)
-    state.config.count++
-  },
-  changeConfigInfo() {
-    state.config.info = `${Math.round(Math.random() * 100000)}`
-  },
-})
-
+import {state} from './store'
+import {subscribe, useSnapshot} from 'valtio'
+import {useEffect, useState} from 'react'
 const ShowwDur = () => {
   const snap = useSnapshot(state)
   return (
@@ -42,10 +17,10 @@ const Control = () => {
   const snap = useSnapshot(state)
   return (
     <>
-      <button className="btn" onClick={snap.decDur}>
+      <button className="btn" onClick={snap.dec}>
         -
       </button>
-      <button className="btn" onClick={snap.incDur}>
+      <button className="btn" onClick={snap.inc}>
         +
       </button>
       <button className="btn" onClick={snap.setCountAsync}>
@@ -102,6 +77,26 @@ const ShowCount = () => {
     </h2>
   )
 }
+const SubScribe = () => {
+  const [data, setData] = useState({})
+  useEffect(() => {
+    const unsub = subscribe(state, () => {
+      // console.log('subscribe', state)
+      setData(JSON.parse(JSON.stringify(state)))
+    })
+    return () => {
+      unsub()
+    }
+  })
+  return (
+    <>
+      <h2>
+        SubScribe State <Refresh />
+      </h2>
+      <pre>{JSON.stringify(data, null, 2)}</pre>
+    </>
+  )
+}
 const App = () => {
   return (
     <div>
@@ -120,6 +115,7 @@ const App = () => {
       <ShowwDur />
       <ShowCount />
       <Control />
+      <SubScribe />
       <Code />
     </div>
   )
