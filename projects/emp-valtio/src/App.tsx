@@ -37,7 +37,7 @@ const Code = () => {
   const snap = useSnapshot(state)
   return (
     <div>
-      <h2>Store Code</h2>
+      <h2>Store Defaut Code</h2>
       <pre>
         {`import {proxy, useSnapshot} from 'valtio'
 const state = proxy({
@@ -57,6 +57,38 @@ const state = proxy({
     state.config.count++
   },
 })`}
+      </pre>
+      <h2>Store Class Code</h2>
+      <pre>
+        {`class ValtioProxy {
+  constructor() {
+    const state = bind(proxy(this))
+    devtools(state, {name: this.constructor.name, enabled: true})
+    return state
+  }
+}
+class CountState extends ValtioProxy {
+  public dur = 4
+  public config = {
+    count: 1,
+    info: 'count',
+  }
+
+  inc() {
+    ++this.dur
+  }
+  dec() {
+    --this.dur
+  }
+  async setCountAsync() {
+    await waitAsync(500)
+    this.config.count++
+  }
+  changeConfigInfo() {
+    this.config.info = ${Math.round(Math.random() * 100000)}
+  }
+}
+export const state = new CountState()`}
       </pre>
     </div>
   )
