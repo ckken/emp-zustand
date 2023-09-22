@@ -5,7 +5,8 @@
 + react-router-dom
 + zustand
 + bun
-
+## workspace
+[bun](https://bun.sh/),根目录执行 `bun i`
 ## 引用观点
 ![](docs/1.png)
 ![](docs/2.png)
