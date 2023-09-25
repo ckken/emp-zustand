@@ -1,0 +1,14 @@
+{
+	"$schema": "https://codesandbox.io/schemas/tasks.json",
+  // These tasks will run in order when initializing your CodeSandbox project.
+  "setupTasks": ["bun i"],
+
+  // These tasks can be run from CodeSandbox. Running one will open a log in the app.
+  "tasks": {
+    "taltio": {
+      "name": "taltio-dev",
+      "command": "cd projects/emp-valtio && bun run dev",
+      "runAtStart": true
+    }
+  }
+}
