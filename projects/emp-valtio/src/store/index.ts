@@ -1,33 +1,13 @@
+import {ValtioProxy} from './helper'
 import {proxy} from 'valtio'
-import {devtools} from 'valtio/utils'
-function bind<T extends object>(instance: T): T {
-  const obj = instance as any
-  const names = Object.getOwnPropertyNames(Object.getPrototypeOf(obj))
 
-  for (const name of names) {
-    const method = obj[name]
-    if (name === 'constructor' || typeof method !== 'function') continue
-    obj[name] = (...args: unknown[]) => method.apply(instance, args)
-  }
-
-  return instance
-}
 //
 const waitAsync = (time = 1000) => {
   return new Promise((resolve, reject) => {
     setTimeout(resolve, time)
   })
 }
-// 优化后的用法
-class ValtioProxy {
-  constructor() {
-    console.log('this ValtioProxy', this, this.constructor.name)
-    const state = bind(proxy(this))
-    // console.log('this.constructor.name', this.constructor.name)
-    devtools(state, {name: this.constructor.name, enabled: true})
-    return state
-  }
-}
+
 class CountState extends ValtioProxy {
   public dur = 4
   public config = {
