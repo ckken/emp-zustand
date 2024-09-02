@@ -11,7 +11,7 @@ const YYEVA = () => {
         mode: 'AspectFill',
         alphaDirection: 'right',
         container: div.current as HTMLElement,
-        videoUrl: `video/fullbg.mp4`,
+        videoUrl: `https://yyeva.yy.com/yy/aspectFill.mp4`,
         autoplay: false,
       }).then(v => {
         evideo = v
