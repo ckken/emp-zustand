@@ -12,7 +12,7 @@ const useCodeStore = create<CodeStoreType>()(set => ({
     set({code: ''})
   },
   async fetchRemote() {
-    const {data} = await axios.get('/data.json')
+    const {data} = await axios.get('data.json')
     set({code: data})
   },
 }))

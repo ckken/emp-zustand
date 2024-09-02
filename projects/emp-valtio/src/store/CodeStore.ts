@@ -3,7 +3,7 @@ import {ValtioProxy} from './base'
 class CodeStore extends ValtioProxy {
   code = {}
   async fetchRemote() {
-    const {data} = await axios.get('/data.json')
+    const {data} = await axios.get('data.json')
     this.code = data
   }
   cleanCode() {
