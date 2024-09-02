@@ -14,8 +14,8 @@ const Tags = () => {
       <span>React@{reactVersion}</span>
       <span>ReactDom@{reactDomVersion}</span>
       <span>ReactRouter@16</span>
-      <span>Zustand@4</span>
-      <span>EMP@2.5 & SWC</span>
+      <span>Valtio@1.0</span>
+      <span>EMP@3.0</span>
       {chromeVersion ? <span>Chrome@{chromeVersion}</span> : null}
       <Refresh />
     </p>
