@@ -1,5 +1,5 @@
+import {proxy, useSnapshot} from 'valtio'
 import {devtools} from 'valtio/utils'
-import {proxy} from 'valtio'
 function bind<T extends object>(instance: T): T {
   const obj = instance as any
   const names = Object.getOwnPropertyNames(Object.getPrototypeOf(obj))
@@ -15,11 +15,12 @@ function bind<T extends object>(instance: T): T {
 // 优化后的用法
 export class ValtioProxy {
   constructor() {
-    console.log('this ValtioProxy', this, this.constructor.name)
-    // const state = bind(proxy(this))
     const state = bind(proxy(this))
-    // console.log('this.constructor.name', this.constructor.name)
     devtools(state, {name: this.constructor.name, enabled: true})
+    // biome-ignore lint/correctness/noConstructorReturn: <explanation>
     return state
+  }
+  get store() {
+    return useSnapshot(this) as typeof this
   }
 }
