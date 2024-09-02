@@ -1,32 +1,32 @@
 {
-  "name": "emp-zustand",
-  "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
-  "scripts": {
-    "dev": "emp dev",
-    "build": "emp build",
-    "start": "emp serve",
-    "stat": "emp build --analyze",
-    "lint": "biome check . --fix"
-  },
-  "author": "",
-  "license": "ISC",
-  "dependencies": {
-    "axios": "^1.7.4",
-    "react": "^18",
-    "react-dom": "^18",
-    "react-router-dom": "^6.3.0",
-    "react-virtuoso": "^2.16.5",
-    "valtio": "^1.13.2",
-    "yyeva": "1.0.6"
-  },
-  "devDependencies": {
-    "@empjs/biome-config": "^0.4.2",
-    "@empjs/cli": "^3.0.1",
-    "@empjs/plugin-react": "3.0.0",
-    "@types/react": "18",
-    "@types/react-dom": "18",
-    "typescript": "^5.5.4"
-  }
+	"name": "emp-valtio",
+	"version": "1.0.0",
+	"description": "",
+	"main": "index.js",
+	"scripts": {
+		"dev": "emp dev",
+		"build": "emp build",
+		"start": "emp serve",
+		"stat": "emp build --analyze",
+		"lint": "biome check . --fix"
+	},
+	"author": "",
+	"license": "ISC",
+	"dependencies": {
+		"axios": "^1.7.4",
+		"react": "^18",
+		"react-dom": "^18",
+		"react-router-dom": "^6.3.0",
+		"react-virtuoso": "^2.16.5",
+		"valtio": "^1.13.2",
+		"yyeva": "1.0.6"
+	},
+	"devDependencies": {
+		"@empjs/biome-config": "^0.4.2",
+		"@empjs/cli": "^3.0.1",
+		"@empjs/plugin-react": "3.0.0",
+		"@types/react": "18",
+		"@types/react-dom": "18",
+		"typescript": "^5.5.4"
+	}
 }

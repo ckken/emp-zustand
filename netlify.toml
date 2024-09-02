@@ -1,6 +1,6 @@
 [build]
-  command = "npx pnpm install --store-dir=.pnpm-store --no-frozen-lockfile && npx pnpm build"
-  publish = "projects/emp-zustand/dist"
+command = "npx pnpm install --store-dir=.pnpm-store --no-frozen-lockfile && npx pnpm build && mkdir publishDir && cp -r projects/emp-zustand/dist publishDir/zustand && cp -r projects/emp-valtio/dist publishDir/valtio && cp index.html publishDir"
+publish = "publishDir"
 
 [build.environment]
-  NPM_FLAGS="--version"
+NPM_FLAGS = "--version"

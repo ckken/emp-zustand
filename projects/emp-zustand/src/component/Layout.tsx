@@ -40,7 +40,9 @@ export const Layout = (props: any) => {
       </div>
       <nav className="nav">
         <div className="wrap">
-          <div className="logo">EMP Zustand</div>
+          <div className="logo">
+            <a href="/">EMP Zustand</a>
+          </div>
           <RouterNav />
         </div>
         <Tags />

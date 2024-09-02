@@ -1,5 +1,5 @@
-import {yyEva, YYEvaType, version} from 'yyeva'
 import {useEffect, useRef} from 'react'
+import {type YYEvaType, version, yyEva} from 'yyeva'
 import {Refresh} from './App'
 const YYEVA = () => {
   const div = useRef<HTMLDivElement>(null)
@@ -11,7 +11,8 @@ const YYEVA = () => {
         mode: 'AspectFill',
         alphaDirection: 'right',
         container: div.current as HTMLElement,
-        videoUrl: `/video/fullbg.mp4`,
+        videoUrl: `video/fullbg.mp4`,
+        autoplay: false,
       }).then(v => {
         evideo = v
         evideo.start()
@@ -30,7 +31,7 @@ const YYEVA = () => {
         </a>
         <Refresh />
       </h1>
-      <div className="container" ref={div}></div>
+      <div className="container" ref={div} />
     </div>
   )
 }
