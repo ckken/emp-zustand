@@ -1,6 +1,7 @@
 import useKeyDown from 'src/hook/useKeyDown'
 import ActionState from 'src/store/ActionStore'
 import CodeStore from 'src/store/CodeStore'
+import RemoteHost from './Remote'
 
 export const Refresh = () => <span className="refresh">{Math.round(Math.random() * 1000)}</span>
 export const ShowCount = () => {
@@ -68,6 +69,7 @@ export const App = () => {
       </button>
       <Controls />
       <Code />
+      {/* <RemoteHost /> */}
     </>
   )
 }
