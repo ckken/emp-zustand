@@ -13,20 +13,20 @@
 	"author": "",
 	"license": "ISC",
 	"dependencies": {
-		"@empjs/share": "^3.1.0",
+		"@empjs/share": "^3.2.0",
 		"axios": "^1.7.4",
 		"core-js": "^3.23.5",
 		"react": "^18",
 		"react-dom": "^18",
 		"react-router-dom": "^6.3.0",
 		"react-virtuoso": "^2.16.5",
-		"valtio": "^1.13.2",
+		"valtio": "^2",
 		"yyeva": "1.0.6"
 	},
 	"devDependencies": {
 		"@empjs/biome-config": "^0.4.2",
-		"@empjs/cli": "^3.1.1",
-		"@empjs/plugin-react": "3.1.1",
+		"@empjs/cli": "^3.2.7",
+		"@empjs/plugin-react": "^3.2.0",
 		"@types/react": "18",
 		"@types/react-dom": "18",
 		"typescript": "^5.5.4"
